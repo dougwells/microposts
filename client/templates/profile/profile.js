@@ -22,4 +22,8 @@ Template.profile.events({
 
         return false;    //stops form from actually submitting
     }
+
+    //"submit #insert-post": function(newPost){
+    //    Posts.insert()
+    //}
 });
