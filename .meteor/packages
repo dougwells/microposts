@@ -21,9 +21,9 @@ insecure                # Allow all DB writes from clients (for prototyping)
 iron:router
 twbs:bootstrap
 check
-selaias:accounts-entry
 ejson
 joshowens:simple-form
 nooitaf:semantic-ui
 raix:handlebar-helpers
 multiply:iron-router-progress
+joshowens:accounts-entry
