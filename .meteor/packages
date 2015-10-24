@@ -27,3 +27,7 @@ nooitaf:semantic-ui
 raix:handlebar-helpers
 multiply:iron-router-progress
 joshowens:accounts-entry
+cfs:standard-packages
+cfs:gridfs
+aldeed:autoform
+aldeed:collection2

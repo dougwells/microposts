@@ -1,3 +1,12 @@
-/**
- * Created by dougwells on 10/21/15.
- */
+Template.posts.helpers({
+    posts: function(){
+        return Posts.find({}, {sort:{createdAt: -1}});
+
+    }
+
+});
+
+Template.posts.events({
+
+
+});

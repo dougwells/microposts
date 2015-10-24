@@ -1,8 +1,10 @@
 <template name="posts">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
-        Say Something!
-    </button>
+    {{#if currentUser}}
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#postModal">
+            Say Something!
+        </button>
+    {{/if}}
 
     <!-- Modal -->
     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myPostModalLabel">
@@ -24,46 +26,19 @@
     </div>
 
     <hr>
-
-    <div class="row  post">
-        <div class="col-md-1">
-            <img src="img/blank_avatar_male.jpg">
+    {{#each posts}}
+        <div class="row  post">
+            <div class="col-md-1">
+                <img src="{{getProfileImg this.userId}}">
+            </div>
+            <div class="col-md-11">
+                <small>Posted by {{username}} on {{this.createdAt}}</small>
+                <p>{{this.body}}</p>
+            </div>
         </div>
-        <div class="col-md-11">
-            <small>Posted by John Smith on July 4, 2015</small>
-            <p>This is the user's post</p>
-        </div>
-    </div>
-
-    <div class="row  post">
-        <div class="col-md-1">
-            <img src="img/blank_avatar_male.jpg">
-        </div>
-        <div class="col-md-11">
-            <small>Posted by John Smith on July 4, 2015</small>
-            <p>This is the user's post</p>
-        </div>
-    </div>
-
-    <div class="row  post">
-        <div class="col-md-1">
-            <img src="img/blank_avatar_male.jpg">
-        </div>
-        <div class="col-md-11">
-            <small>Posted by John Smith on July 4, 2015</small>
-            <p>This is the user's post</p>
-        </div>
-    </div>
-
-    <div class="row  post">
-        <div class="col-md-1">
-            <img src="img/blank_avatar_male.jpg">
-        </div>
-        <div class="col-md-11">
-            <small>Posted by John Smith on July 4, 2015</small>
-            <p>This is the user's post</p>
-        </div>
-    </div>
+    {{else}}
+        <p>No Posts</p>
+    {{/each}}
 
 
 
